@@ -1,8 +1,8 @@
-# CSC4402 Team Project
+# CSC4402: Community Seed Bank & Regeneration Cooperative
 
-Five-person database project. This README is our shared shortlist: add alternatives, discuss tradeoffs, and record the team's choice before implementation.
+Five-person database project for a local nonprofit that collects, tests, stores, distributes, and regenerates seeds.
 
-**Decision status: Open — no enterprise has been selected.**
+**Decision: We are building the seed bank project. Enterprise selection is complete.**
 
 ## Assignment requirements
 
@@ -20,13 +20,9 @@ Submission also requires a report of no more than eight pages, participation det
 
 **Deadline clarification needed:** The supplied description says Fall 2026 but lists a December 1, 2024 deadline. Confirm the current deadline with the instructor.
 
-## Initial recommendations
+## Selected enterprise
 
-Two research agents investigated different enterprise domains. After comparing scope, relational modeling opportunities, and fit to the five project parts, both endorsed this shortlist. The ordering is a recommendation, not a team decision.
-
-### Option 1: Community Seed Bank & Regeneration Cooperative
-
-**Best overall balance of originality, database depth, and manageable scope.**
+The seed bank was selected for its distinct entities, meaningful inventory and regeneration relationships, useful query opportunities, and bounded application scope. The original alternatives and research discussion remain in [pull request #1](https://github.com/jarcur1/csc4402-team-project/pull/1).
 
 #### Enterprise and database need
 
@@ -69,148 +65,100 @@ One application with menus for lot intake/inventory, germination-test entry, mem
 
 These sources describe real operations; the proposed schema and application scope are our design choices. Germination guidance should not be treated as a universal legal or biological cutoff.
 
-### Option 2: Environmental Water-Testing Laboratory
+## Work distribution
 
-**Best choice for a scientific or engineering enterprise.**
+One person owns each of the five assignment parts. These are primary responsibilities, not isolated projects; everyone contributes to the report and final integration.
 
-#### Enterprise and database need
-
-A small laboratory accepts water-testing requests, tracks collected samples and custody handoffs, assigns requested tests, and records analytical results and reviews.
-
-One client can have multiple sampling sites. Each sample can require several tests, and each requested test can have multiple analytical attempts. Custody history must remain associated with the correct physical sample.
-
-#### Proposed model
-
-Core entities could include clients, sites, service requests, samples, staff, custody transfers, test methods, test orders, and analytical runs/results.
-
-Interesting relationships and constraints:
-
-- Samples and test methods have a many-to-many relationship through test orders.
-- Each test order can have multiple analytical runs, including rejected attempts and reruns.
-- Each sample has a timestamped custody history.
-- Results must reference an existing test order and identify the method and measurement unit.
-- Review and completion states must distinguish an attempted test from an approved result.
-
-#### Five candidate queries
-
-1. Which requested tests have no approved result?
-2. Which unfinished test orders are past their promised completion date?
-3. Who handled a particular sample, and when?
-4. Which repeat analytical runs produced materially different results under a defined comparison rule?
-5. What are workload and average turnaround time by analyst and test method?
-
-#### Application scope
-
-One application with menus for request/sample intake, custody handoffs, and analytical result entry/review. Include create, update, and delete operations where appropriate, while preserving the integrity of linked sample records.
-
-**Exclude:** Instrument integration, live sensors, billing, and declarations that water is legally compliant or safe.
-
-**Main risk:** Expanding into regulatory compliance. Keep this an operational tracking system; do not implement simplified legal violation rules or universal safety thresholds.
-
-#### Sources
-
-- [EPA: Sample and Evidence Management](https://www.epa.gov/sites/default/files/2015-06/documents/Sample-and-Evidence-Management.pdf), particularly Sections 2.2 and 2.5 — sample identification, requested analyses, custody roles, and timestamped transfers.
-- [USGS: National Field Manual, Processing of Water Samples](https://doi.org/10.3133/twri09A5) — background on processing samples and submitting them for analysis.
-
-These sources ground the workflow, not a claim that the proposed student application satisfies laboratory accreditation or regulatory requirements.
-
-### Option 3: Reusable Takeaway Container Pool
-
-**Best choice for a straightforward business workflow with visible state changes.**
-
-#### Enterprise and database need
-
-A local company supplies reusable food containers to participating cafes. Customers can return containers at another partner location; containers are washed, inspected, and recirculated.
-
-Containers move between businesses and customers. Returns, washing batches, inspections, and retirement records determine whether they can be issued again. The focus is the container lifecycle, not restaurant orders.
-
-#### Proposed model
-
-Core entities could include partner businesses, locations, container types, individual containers, borrowers, loans, returns, wash batches, batch items, and inspections.
-
-Interesting relationships and constraints:
-
-- Each container has a unique identity and can have many historical loans, but at most one active loan.
-- A return location can differ from the issuing location.
-- Wash batches contain multiple containers, and containers can pass through multiple batches over time.
-- Returned containers cannot be reissued until the required cleaning/inspection workflow is complete.
-- Retired containers cannot be checked out.
-
-#### Five candidate queries
-
-1. Which containers are overdue for return?
-2. Which partner locations are below their clean-stock target?
-3. Where was each container issued and returned?
-4. Which returned containers have not passed the required cleaning/inspection workflow?
-5. Which container types have the highest retirement rate after repeated use?
-
-#### Application scope
-
-One application with menus for issue/return, washing and inspection, and partner inventory management. Include create, update, and delete operations where appropriate, without orphaning lifecycle records.
-
-**Exclude:** Payment processing, actual barcode hardware, delivery-route optimization, and restaurant ordering.
-
-**Main risk:** Reducing the model to a basic checkout system. Keep cross-location returns, wash-batch membership, and inspections explicit.
-
-#### Sources
-
-- [reCIRCLE: Restaurant Program](https://www.recircle.ch/en/restaurant/) — a reusable packaging network, exchanges and returns, partner-business returns, replacements, and end-of-life recovery.
-
-Individual-container IDs and wash-batch records are proposed project design choices, not claims about reCIRCLE's internal database.
-
-## Five-person ownership plan
-
-Assign one primary owner to each listed part. Ownership does not mean working in isolation.
-
-| Owner | Part | Main responsibilities |
+| Owner | Assignment part | Primary deliverables |
 | --- | --- | --- |
-| Person 1 — unassigned | E-R diagram | Lead entity/relationship definitions, keys, cardinalities, and the diagram. |
-| Person 2 — unassigned | Relational schema | Translate the agreed model into SQL tables, foreign keys, checks, and other necessary constraints. |
-| Person 3 — unassigned | Data generation | Produce a reproducible synthetic dataset with coherent histories and useful boundary cases. |
-| Person 4 — unassigned | Five test queries | Define the five questions early; provide executable SQL and reproducible expected results. |
-| Person 5 — unassigned | Application interfaces | Build one application with three or four role-based menus and appropriate input/update/delete operations. |
+| **Project lead (`jarcur1`; you)** | **2. Relational schema and inventory integrity — hardest technical task** | Executable schema, relational-schema explanation, keys/checks/foreign keys, transaction-safe stock operations, and the shared database contract. |
+| **Joseph** | **1. E-R diagram** | Editable diagram and report-ready export, entity/attribute definitions, primary keys, cardinalities, and participation constraints. |
+| **Luke** | **3. Data generation** | Reproducible synthetic-data generator and a populated database with coherent inventory histories and meaningful query cases. |
+| **Owen** | **4. Five test queries** | Exactly five executable queries, documented parameters, deterministic expected results, and instructions to execute them. |
+| **Trey** | **5. Application interfaces** | One CLI application with four bounded workflow menus, input/update/delete support, validation messages, and interface illustrations for the report. |
 
-### Shared integration rules
+The file paths below are target deliverables, not claims that implementation already exists.
 
-- Agree on the enterprise workflows and E-R model together before implementing separate parts.
-- The E-R and schema owners lead agreement on table names, keys, relationships, and allowed states.
-- Stabilize the initial schema before integrating the generator, queries, and interfaces; communicate subsequent changes to every affected owner.
-- Each person writes their report contribution and participation details.
-- Share execution instructions and final integration checks; these are not a sixth person's job.
-- Keep the interface scope bounded so the fifth owner is not responsible for building a large frontend.
+### Project lead: Relational schema and inventory integrity
 
-**Suggested stack, not yet selected:** Python, SQLite, and a CLI. This fits the assignment without requiring hosting or a web framework.
+**Why this is the hardest task:** Every other implementation depends on the schema, and stock correctness spans multiple tables and operations. A distribution must not oversell a lot or leave partially recorded data if an operation fails.
 
-## Add options and make a choice
+- Translate Joseph's agreed E-R model into normalized relations.
+- Own `database/schema.sql` and the shared database operations in `app/db.py`.
+- Define primary/foreign keys, uniqueness, required fields, valid states, and deletion rules.
+- Use integer seed counts consistently. Agree on one authoritative stock-accounting approach; avoid independently maintained totals that can disagree.
+- Make distribution header/items and their stock changes one atomic transaction. Reject insufficient stock without leaving partial records.
+- Define how intake, distributions, corrections/deletions, germination-test consumption, and seeds issued for grow-outs affect inventory.
+- Require a positive number of seeds tested and a sprouted count between zero and that number.
+- Enable SQLite foreign-key enforcement for every application/generator connection and protect referenced history from accidental deletion.
+- Publish table/column names, database initialization order, allowed states, and database-operation signatures for Luke, Owen, and Trey.
+- Supply the relational-schema report section and narrowly scoped integrity checks, including rollback on insufficient stock.
 
-### How to propose another enterprise
+**First handoff:** Work with Joseph to settle the model, then publish the initial schema and database-operation contract before dependent implementations integrate.
 
-Add a new numbered option above the ownership plan, using the same structure:
+### Joseph: E-R diagram
 
-1. Enterprise and why it needs a relational database.
-2. Proposed entities and at least two interesting relationships or constraints.
-3. Five useful query questions.
-4. Three or four bounded interface workflows.
-5. Explicit exclusions and the main implementation risk.
-6. Links to sources for real operational details.
+- Own `design/er-diagram.drawio` and a readable exported diagram at `design/er-diagram.pdf`.
+- Distinguish crops, varieties, physical seed lots, and newly harvested replacement lots.
+- Model distribution items, germination-test history, member relationships, storage, and grow-out assignments.
+- Mark keys, relationship cardinalities, optional/mandatory participation, and relevant attributes.
+- Include the attributes needed by Owen's five questions, such as stock targets, transaction/test dates, and grow-out due dates.
+- Review the model with the project lead so the diagram and actual schema agree.
+- Supply the E-R report section and a concise entity/attribute dictionary.
 
-Use synthetic data for all options. External services and real customer records should not be prerequisites.
+**First handoff:** Propose the entities and relationships for a team review. Do not wait for a polished diagram before resolving model questions.
 
-### How to compare options
+### Luke: Synthetic data generation
 
-Discuss these criteria before choosing:
+- Own `scripts/generate_data.py` and the generated submission database at `database/seedbank.db`.
+- Generate synthetic members/growers, varieties, lots, tests, distributions, and grow-out assignments without outside services or real personal data.
+- Use a fixed random seed and a documented reference date so reruns reproduce Owen's expected query results.
+- Include multiple lots per variety, multiple tests per lot, low-stock and zero-stock cases, differing demand, and both completed and overdue grow-outs.
+- Keep dates, quantities, foreign keys, and consumption histories consistent; do not simply generate unrelated random rows.
+- Use the agreed schema and stock operations rather than bypassing integrity rules.
+- Document how to generate a fresh database without silently overwriting an existing working database.
+- Supply the data-generation explanation, generation command, and dataset summary for the submission.
 
-- Can we explain the enterprise and its scope clearly within the report limit?
-- Are the entities and relationships meaningful rather than invented to inflate the schema?
-- Can we generate coherent data and demonstrate five useful queries?
-- Can one person reasonably own the interface part?
-- Can we run the complete submission locally without outside accounts or integrations?
-- Does the group actually want to work on this domain?
+**First handoff:** Agree on representative scenarios with Owen while Joseph and the project lead finalize the model.
 
-Use pull-request comments for discussion and README edits for durable proposals. Work on a feature branch, open a pull request, and have another teammate review before merging.
+### Owen: Five test queries and expected results
 
-### Decision record
+- Own `queries/test_queries.sql` and `queries/expected_results.md`.
+- Implement the five seed-bank questions listed above; agree on parameter values, low-stock/low-germination definitions, and the reference date.
+- Make "latest germination test" deterministic if a lot has more than one test on the same date.
+- Ensure joins do not double-count stock or distributions, and include varieties with no available stock where appropriate.
+- Use Luke's reproducible dataset and show actual expected rows, not just descriptions of what a query should return.
+- Provide an exact execution command and a stable output ordering for each query.
+- Supply the report's five query explanations and sample outcomes.
 
-**No team choice, vote, or owner assignment has been recorded yet.**
+**First handoff:** Send required fields and representative scenarios to Joseph, the project lead, and Luke before the schema is finalized.
 
-Once the group agrees, replace this statement with the selected enterprise, decision date, short rationale, agreed exclusions, chosen stack, and the five owners. Keep the other options for context.
+### Trey: Application interfaces
+
+- Own `app/cli.py` and the application-interface report section.
+- Build one local CLI application, not four separate applications or a web frontend.
+- Provide four workflow menus: lot intake/inventory, germination-test entry, member distribution, and grow-out coordination.
+- Include the member/grower/variety record maintenance needed to use these workflows; keep it within the same application.
+- Support appropriate create, update, and delete operations. Show understandable errors for invalid input or protected referenced records.
+- Call the project lead's shared database operations; do not duplicate stock-accounting or transaction logic in the CLI.
+- Capture representative menu interactions for the report and document how to launch the application.
+
+**First handoff:** Sketch the four menus and send the required database-operation signatures to the project lead. UI design can start before the schema is implemented.
+
+## Implementation baseline
+
+Use **Python, SQLite, and a CLI** as the working baseline. This fits the assignment and requires no hosting, external accounts, payment systems, or live integrations.
+
+Use synthetic data only. Keep genetics, weather feeds, mapping, online payments, and automated agricultural advice outside the project.
+
+## Handoffs and shared integration
+
+1. **Agree on the model:** Joseph and the project lead lead the review; Luke, Owen, and Trey bring dataset, query, and workflow requirements.
+2. **Publish the contract:** The project lead publishes the schema and shared database-operation interface. Review stock units, date conventions, allowed states, deletion behavior, and transaction boundaries together.
+3. **Implement in parallel:** Luke builds the generator, Owen implements the five queries, and Trey builds the CLI against the agreed contract. Joseph keeps the diagram synchronized.
+4. **Prove the complete workflow:** Starting from a fresh database, generate data, execute all five queries, and exercise intake, test entry, distribution, and grow-out coordination. Check failed distributions leave stock and records unchanged.
+5. **Assemble the submission together:** Each owner contributes their report section, execution instructions, and participation details. Keep the full report within eight pages and package all required database, application, generator, and test files.
+
+Integration and packaging are shared responsibilities, not a sixth person's job. Discuss schema changes with every affected owner before integrating them.
+
+Use feature branches and pull requests. Have another teammate review before merging; do not push directly to `main`.
