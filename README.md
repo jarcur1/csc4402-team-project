@@ -162,3 +162,35 @@ Use synthetic data only. Keep genetics, weather feeds, mapping, online payments,
 Integration and packaging are shared responsibilities, not a sixth person's job. Discuss schema changes with every affected owner before integrating them.
 
 Use feature branches and pull requests. Have another teammate review before merging; do not push directly to `main`.
+
+
+
+Relationship	Cardinality	Draft explanation
+Crop → Variety	One-to-many	A crop has multiple varieties; each variety belongs to one crop.
+Variety → Seed Lot	One-to-many	A variety can have several physical lots from different harvests. Each lot contains one variety.
+Grower → Seed Lot	One-to-many	A grower can contribute multiple lots; each lot records its contributing grower.
+Storage Location → Seed Lot	One-to-many	A location can store multiple lots; each lot has one current location.
+Seed Lot → Germination Test	One-to-many	A lot can have multiple tests over time. Each test belongs to exactly one lot.
+Member → Distribution	One-to-many	A member can receive multiple distributions; each distribution has one recipient.
+Distribution → Distribution Item	One-to-many	A distribution contains one or more items. Each item records a lot and the quantity issued.
+Seed Lot → Distribution Item	One-to-many	A lot can supply multiple distribution items. Distribution items resolve the many-to-many relationship between distributions and lots.
+Variety → Grow-out Assignment	One-to-many	Each assignment requests regeneration of one variety. A variety can have multiple assignments.
+Grower → Grow-out Assignment	One-to-many	Each assignment belongs to one grower; a grower can receive multiple assignments.
+Seed Lot → Grow-out Assignment	One-to-many, proposed	An assignment can reference one source lot used for planting. A source lot can supply multiple assignments.
+Grow-out Assignment → New Seed Lot	One-to-many, proposed	An assignment can produce zero or more new harvest lots. Each resulting lot optionally references its originating assignment.
+
+
+Suggested attributes for the four main records:
+Record	Draft attributes
+Seed Lot	Lot ID, variety, contributing grower, harvest date, storage location, quantity received, originating grow-out assignment if applicable
+Distribution	Distribution ID, member, distribution date; items contain lot and quantity issued
+Germination Test	Test ID, lot, test date, number tested, number germinated
+Grow-out Assignment	Assignment ID, variety, assigned grower, optional source lot, quantity issued, assigned date, due date, status
+
+
+Points to settle before finalizing the schema:
+- Can one grow-out use multiple source lots? This draft assumes at most one.
+- Can one grow-out produce multiple harvest lots? This draft allows it.
+- Track germination-test consumption and grow-out seed issuance consistently with distributions, using integer seed counts and one agreed inventory approach.
+- Treat harvested seeds as new lots, preserving their connection to the grow-out.
+This is a proposed relationship draft for team review. No final schema, database file, or repository changes were created.
