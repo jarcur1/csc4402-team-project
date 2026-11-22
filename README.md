@@ -77,7 +77,7 @@ One person owns each of the five assignment parts. These are primary responsibil
 | **Owen** | **4. Five test queries** | Exactly five executable queries, documented parameters, deterministic expected results, and instructions to execute them. |
 | **Trey** | **5. Application interfaces** | One CLI application with four bounded workflow menus, input/update/delete support, validation messages, and interface illustrations for the report. |
 
-The file paths below are target deliverables, not claims that implementation already exists.
+Roles below describe ownership. The project's [SQLite contract](database/README.md) includes fresh-database setup, integration signatures, and verification commands.
 
 ### Project lead: Relational schema and inventory integrity
 
@@ -85,6 +85,7 @@ The file paths below are target deliverables, not claims that implementation alr
 
 - Translate Joseph's agreed E-R model into normalized relations.
 - Own `database/schema.sql` and the shared database operations in `app/db.py`.
+- Integrate using the [table and operation contract](database/README.md), aligned with the [E-R model](design/er-model.md).
 - Define primary/foreign keys, uniqueness, required fields, valid states, and deletion rules.
 - Use integer seed counts consistently. Agree on one authoritative stock-accounting approach; avoid independently maintained totals that can disagree.
 - Make distribution header/items and their stock changes one atomic transaction. Reject insufficient stock without leaving partial records.
