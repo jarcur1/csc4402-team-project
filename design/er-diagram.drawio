@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="seed-bank-er" name="Seed Bank ER">
+    <mxGraphModel dx="1320" dy="962" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1320" pageHeight="962" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Community Seed Bank | Entity–Relationship Model" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=32;fontColor=#143A32;spacing=0;overflow=hidden;fontStyle=1;" vertex="1" parent="1" connectable="0">
+          <mxGeometry as="geometry" x="55" y="26" width="1220" height="39" />
+        </mxCell>
+        <mxCell id="key" value="PK  primary key     FK  foreign key     ?  optional" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="1" connectable="0">
+          <mxGeometry as="geometry" x="55" y="73" width="430" height="24" />
+        </mxCell>
+        <mxCell id="m11" value="exactly one" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="1" connectable="0">
+          <mxGeometry as="geometry" x="540" y="73" width="116" height="24" />
+        </mxCell>
+        <mxCell id="m01" value="zero or one" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="1" connectable="0">
+          <mxGeometry as="geometry" x="704" y="73" width="116" height="24" />
+        </mxCell>
+        <mxCell id="m0n" value="zero or many" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="1" connectable="0">
+          <mxGeometry as="geometry" x="868" y="73" width="132" height="24" />
+        </mxCell>
+        <mxCell id="m1n" value="one or many" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="1" connectable="0">
+          <mxGeometry as="geometry" x="1048" y="73" width="132" height="24" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=none;endArrow=ERmandOne;startSize=11;endSize=11;" id="legend-0" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="490" y="85" />
+            <mxPoint as="targetPoint" x="532" y="85" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=none;endArrow=ERzeroToOne;startSize=11;endSize=11;" id="legend-1" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="654" y="85" />
+            <mxPoint as="targetPoint" x="696" y="85" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=none;endArrow=ERzeroToMany;startSize=11;endSize=11;" id="legend-2" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="818" y="85" />
+            <mxPoint as="targetPoint" x="860" y="85" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=none;endArrow=ERoneToMany;startSize=11;endSize=11;" id="legend-3" edge="1" parent="1">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="998" y="85" />
+            <mxPoint as="targetPoint" x="1040" y="85" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=0.4978723;exitY=1.0000000;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.4978723;entryY=0.0000000;entryDx=0;entryDy=0;entryPerimeter=0;" id="crop-variety" edge="1" parent="1" source="crop" target="variety">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=1.0000000;exitY=0.2434783;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.0000000;entryY=0.2485207;entryDx=0;entryDy=0;entryPerimeter=0;" id="variety-assignment" edge="1" parent="1" source="variety" target="assignment">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=1.0000000;exitY=0.6521739;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.0000000;entryY=0.1283422;entryDx=0;entryDy=0;entryPerimeter=0;" id="variety-lot" edge="1" parent="1" source="variety" target="lot">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="334" y="375" />
+              <mxPoint x="334" y="558" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=0.4680851;exitY=1.0000000;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5762712;entryY=0.0000000;entryDx=0;entryDy=0;entryPerimeter=0;" id="grower-assignment" edge="1" parent="1" source="grower" target="assignment">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=1.0000000;exitY=0.5189873;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.0000000;entryY=0.1550802;entryDx=0;entryDy=0;entryPerimeter=0;" id="grower-lot" edge="1" parent="1" source="grower" target="lot">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="778" y="173" />
+              <mxPoint x="778" y="563" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=1.0000000;exitY=0.5189873;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.0000000;entryY=0.7647059;entryDx=0;entryDy=0;entryPerimeter=0;" id="location-lot" edge="1" parent="1" source="location" target="lot">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERzeroToOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=0.2305085;exitY=0.0000000;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.2305085;entryY=1.0000000;entryDx=0;entryDy=0;entryPerimeter=0;" id="source-lot" edge="1" parent="1" source="lot" target="assignment">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERzeroToOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=0.7559322;exitY=1.0000000;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.7559322;entryY=0.0000000;entryDx=0;entryDy=0;entryPerimeter=0;" id="harvest-output" edge="1" parent="1" source="assignment" target="lot">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=0.4978723;exitY=1.0000000;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.4978723;entryY=0.0000000;entryDx=0;entryDy=0;entryPerimeter=0;" id="member-distribution" edge="1" parent="1" source="member" target="distribution">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERoneToMany;startSize=11;endSize=11;exitX=0.4978723;exitY=1.0000000;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.4978723;entryY=0.0000000;entryDx=0;entryDy=0;entryPerimeter=0;" id="distribution-item" edge="1" parent="1" source="distribution" target="item">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=1.0000000;exitY=0.4598930;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.0000000;entryY=0.8865979;entryDx=0;entryDy=0;entryPerimeter=0;" id="lot-item" edge="1" parent="1" source="lot" target="item">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=0.5152542;exitY=1.0000000;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5000000;entryY=0.0000000;entryDx=0;entryDy=0;entryPerimeter=0;" id="lot-test" edge="1" parent="1" source="lot" target="test">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="542" y="750" />
+              <mxPoint x="865" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#335149;strokeWidth=1.6;startArrow=ERmandOne;endArrow=ERzeroToMany;startSize=11;endSize=11;exitX=1.0000000;exitY=0.8716578;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.4978723;entryY=0.0000000;entryDx=0;entryDy=0;entryPerimeter=0;" id="lot-adjustment" edge="1" parent="1" source="lot" target="adjustment">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1157" y="697" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="crop" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="55" y="132" width="235" height="79" />
+        </mxCell>
+        <mxCell id="crop-head" value="Crop" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="crop" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="233" height="30" />
+        </mxCell>
+        <mxCell id="crop-row-0" value="PK  crop_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="crop" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="211" height="18" />
+        </mxCell>
+        <mxCell id="crop-row-1" value="name" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="crop" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="211" height="18" />
+        </mxCell>
+        <mxCell id="variety" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="55" y="300" width="235" height="115" />
+        </mxCell>
+        <mxCell id="variety-head" value="Variety" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="variety" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="233" height="30" />
+        </mxCell>
+        <mxCell id="variety-row-0" value="PK  variety_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="variety" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="211" height="18" />
+        </mxCell>
+        <mxCell id="variety-row-1" value="FK  crop_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="variety" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="211" height="18" />
+        </mxCell>
+        <mxCell id="variety-row-2" value="name" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="variety" connectable="0">
+          <mxGeometry as="geometry" x="12" y="70" width="211" height="18" />
+        </mxCell>
+        <mxCell id="variety-row-3" value="stock_target_seeds" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="variety" connectable="0">
+          <mxGeometry as="geometry" x="12" y="88" width="211" height="18" />
+        </mxCell>
+        <mxCell id="grower" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="450" y="132" width="235" height="79" />
+        </mxCell>
+        <mxCell id="grower-head" value="Grower" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="grower" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="233" height="30" />
+        </mxCell>
+        <mxCell id="grower-row-0" value="PK  grower_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="grower" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="211" height="18" />
+        </mxCell>
+        <mxCell id="grower-row-1" value="name" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="grower" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="211" height="18" />
+        </mxCell>
+        <mxCell id="assignment" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="390" y="286" width="295" height="169" />
+        </mxCell>
+        <mxCell id="assignment-head" value="Grow-out Assignment" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="assignment" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="293" height="30" />
+        </mxCell>
+        <mxCell id="assignment-row-0" value="PK  assignment_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="assignment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="271" height="18" />
+        </mxCell>
+        <mxCell id="assignment-row-1" value="FK  variety_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="assignment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="271" height="18" />
+        </mxCell>
+        <mxCell id="assignment-row-2" value="FK  grower_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="assignment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="70" width="271" height="18" />
+        </mxCell>
+        <mxCell id="assignment-row-3" value="FK  source_lot_id ?" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="assignment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="88" width="271" height="18" />
+        </mxCell>
+        <mxCell id="assignment-row-4" value="assigned_on, due_on" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="assignment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="106" width="271" height="18" />
+        </mxCell>
+        <mxCell id="assignment-row-5" value="issued_on ?, seeds_issued ?" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="assignment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="124" width="271" height="18" />
+        </mxCell>
+        <mxCell id="assignment-row-6" value="status" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="assignment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="142" width="271" height="18" />
+        </mxCell>
+        <mxCell id="lot" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="390" y="534" width="295" height="187" />
+        </mxCell>
+        <mxCell id="lot-head" value="Seed Lot" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="lot" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="293" height="30" />
+        </mxCell>
+        <mxCell id="lot-row-0" value="PK  lot_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="lot" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="271" height="18" />
+        </mxCell>
+        <mxCell id="lot-row-1" value="FK  variety_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="lot" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="271" height="18" />
+        </mxCell>
+        <mxCell id="lot-row-2" value="FK  grower_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="lot" connectable="0">
+          <mxGeometry as="geometry" x="12" y="70" width="271" height="18" />
+        </mxCell>
+        <mxCell id="lot-row-3" value="FK  location_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="lot" connectable="0">
+          <mxGeometry as="geometry" x="12" y="88" width="271" height="18" />
+        </mxCell>
+        <mxCell id="lot-row-4" value="FK  origin_assignment_id ?" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="lot" connectable="0">
+          <mxGeometry as="geometry" x="12" y="106" width="271" height="18" />
+        </mxCell>
+        <mxCell id="lot-row-5" value="harvested_on, received_on" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="lot" connectable="0">
+          <mxGeometry as="geometry" x="12" y="124" width="271" height="18" />
+        </mxCell>
+        <mxCell id="lot-row-6" value="seeds_received" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="lot" connectable="0">
+          <mxGeometry as="geometry" x="12" y="142" width="271" height="18" />
+        </mxCell>
+        <mxCell id="lot-row-7" value="lot_status" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="lot" connectable="0">
+          <mxGeometry as="geometry" x="12" y="160" width="271" height="18" />
+        </mxCell>
+        <mxCell id="location" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="55" y="636" width="235" height="79" />
+        </mxCell>
+        <mxCell id="location-head" value="Storage Location" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="location" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="233" height="30" />
+        </mxCell>
+        <mxCell id="location-row-0" value="PK  location_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="location" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="211" height="18" />
+        </mxCell>
+        <mxCell id="location-row-1" value="name" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="location" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="211" height="18" />
+        </mxCell>
+        <mxCell id="member" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="1040" y="132" width="235" height="79" />
+        </mxCell>
+        <mxCell id="member-head" value="Member" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="member" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="233" height="30" />
+        </mxCell>
+        <mxCell id="member-row-0" value="PK  member_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="member" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="211" height="18" />
+        </mxCell>
+        <mxCell id="member-row-1" value="name" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="member" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="211" height="18" />
+        </mxCell>
+        <mxCell id="distribution" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="1040" y="300" width="235" height="97" />
+        </mxCell>
+        <mxCell id="distribution-head" value="Distribution" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="distribution" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="233" height="30" />
+        </mxCell>
+        <mxCell id="distribution-row-0" value="PK  distribution_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="distribution" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="211" height="18" />
+        </mxCell>
+        <mxCell id="distribution-row-1" value="FK  member_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="distribution" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="211" height="18" />
+        </mxCell>
+        <mxCell id="distribution-row-2" value="distributed_on" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="distribution" connectable="0">
+          <mxGeometry as="geometry" x="12" y="70" width="211" height="18" />
+        </mxCell>
+        <mxCell id="item" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="1040" y="534" width="235" height="97" />
+        </mxCell>
+        <mxCell id="item-head" value="Distribution Item" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="item" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="233" height="30" />
+        </mxCell>
+        <mxCell id="item-row-0" value="PK, FK  distribution_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="item" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="211" height="18" />
+        </mxCell>
+        <mxCell id="item-row-1" value="PK, FK  lot_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="item" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="211" height="18" />
+        </mxCell>
+        <mxCell id="item-row-2" value="seeds_issued" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="item" connectable="0">
+          <mxGeometry as="geometry" x="12" y="70" width="211" height="18" />
+        </mxCell>
+        <mxCell id="test" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="730" y="781" width="270" height="133" />
+        </mxCell>
+        <mxCell id="test-head" value="Germination Test" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="test" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="268" height="30" />
+        </mxCell>
+        <mxCell id="test-row-0" value="PK  test_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="test" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="246" height="18" />
+        </mxCell>
+        <mxCell id="test-row-1" value="FK  lot_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="test" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="246" height="18" />
+        </mxCell>
+        <mxCell id="test-row-2" value="tested_on" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="test" connectable="0">
+          <mxGeometry as="geometry" x="12" y="70" width="246" height="18" />
+        </mxCell>
+        <mxCell id="test-row-3" value="seeds_tested, seeds_germinated" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="test" connectable="0">
+          <mxGeometry as="geometry" x="12" y="88" width="246" height="18" />
+        </mxCell>
+        <mxCell id="test-row-4" value="sample_from_stock" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="test" connectable="0">
+          <mxGeometry as="geometry" x="12" y="106" width="246" height="18" />
+        </mxCell>
+        <mxCell id="adjustment" value="" style="rounded=0;fillColor=#F5FAF7;strokeColor=#335149;strokeWidth=1.6;" vertex="1" parent="1" connectable="1">
+          <mxGeometry as="geometry" x="1040" y="781" width="235" height="133" />
+        </mxCell>
+        <mxCell id="adjustment-head" value="Stock Adjustment" style="rounded=0;fillColor=#20584B;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#FFFFFF;fontStyle=1;spacingLeft=11;" vertex="1" parent="adjustment" connectable="0">
+          <mxGeometry as="geometry" x="1" y="1" width="233" height="30" />
+        </mxCell>
+        <mxCell id="adjustment-row-0" value="PK  adjustment_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="adjustment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="34" width="211" height="18" />
+        </mxCell>
+        <mxCell id="adjustment-row-1" value="FK  lot_id" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="adjustment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="52" width="211" height="18" />
+        </mxCell>
+        <mxCell id="adjustment-row-2" value="adjusted_on" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="adjustment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="70" width="211" height="18" />
+        </mxCell>
+        <mxCell id="adjustment-row-3" value="delta_seeds" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="adjustment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="88" width="211" height="18" />
+        </mxCell>
+        <mxCell id="adjustment-row-4" value="reason" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#253B36;spacing=0;overflow=hidden;" vertex="1" parent="adjustment" connectable="0">
+          <mxGeometry as="geometry" x="12" y="106" width="211" height="18" />
+        </mxCell>
+        <mxCell id="source-label" value="source lot" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#20584B;spacing=0;overflow=hidden;align=center;fillColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1" connectable="0">
+          <mxGeometry as="geometry" x="407" y="482" width="102" height="25" />
+        </mxCell>
+        <mxCell id="harvest-label" value="harvest output" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#20584B;spacing=0;overflow=hidden;align=center;fillColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1" connectable="0">
+          <mxGeometry as="geometry" x="544" y="482" width="138" height="25" />
+        </mxCell>
+        <mxCell id="footer" value="Lot stock is derived from intake, distributions, test samples, grow-out issues, and adjustments." style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#335149;spacing=0;overflow=hidden;" vertex="1" parent="1" connectable="0">
+          <mxGeometry as="geometry" x="55" y="921" width="1220" height="22" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
