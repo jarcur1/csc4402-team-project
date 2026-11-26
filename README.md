@@ -148,6 +148,19 @@ Roles below describe ownership. The project's [SQLite contract](database/README.
 
 ## Implementation baseline
 
+### Run the provisional CLI
+
+From the repository root, use Python 3.11+ with SQLite 3.37+:
+
+```sh
+python -m app.db database/seedbank-local.db
+python -m app.cli --database database/seedbank-local.db
+```
+
+Run the first command once to create an empty scratch database. If the file already exists, use the second command to reopen it. Start in **Lot intake and inventory** and add a crop, variety, grower, and storage location before receiving a lot. Add a member under **Member distribution** before posting a distribution.
+
+The four menus cover inventory, germination tests, member distributions, and grow-out assignments. When the populated submission database is available, launch the CLI with `python -m app.cli --database database/seedbank.db`. Verification with that dataset is pending. See the [application interface guide](docs/application-interfaces.md) for workflow details and a sample interaction.
+
 Use **Python, SQLite, and a CLI** as the working baseline. This fits the assignment and requires no hosting, external accounts, payment systems, or live integrations.
 
 Use synthetic data only. Keep genetics, weather feeds, mapping, online payments, and automated agricultural advice outside the project.
